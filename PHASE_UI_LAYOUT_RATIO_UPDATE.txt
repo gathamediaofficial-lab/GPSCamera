@@ -1,0 +1,12 @@
+GPS Camera by Gatha Media — UI Layout / Ratio Update
+
+Changes in this update:
+- Camera bottom controls are exactly three: Gallery, Shutter, Flip Camera.
+- Settings button is placed in the top-right corner with safe spacing.
+- Ratio selector options: 1:1, 9:16, 3:4, Full screen.
+- 3:4 is the default ratio, including a one-time migration from earlier builds whose default was Full screen.
+- Full screen mode hides Android system bars (transient bars can be revealed by swipe) and overlays the ratio selector and three camera controls on the active camera preview.
+- Full screen mode restores system bars when leaving camera screen/settings.
+- Saved photo crop logic uses 3:4 for the standard ratio.
+
+Build status: source package updated; Android Studio/Gradle compilation and device testing have not been run in this environment. Please run Build > Make Project before creating a signed APK.

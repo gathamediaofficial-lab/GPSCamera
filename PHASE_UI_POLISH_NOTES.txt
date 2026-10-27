@@ -1,0 +1,13 @@
+GPS Camera by Gatha Media — UI polish update
+
+Changes in this update:
+- Refined camera header with a branded GPS mark, cleaner type hierarchy, and consistent rounded settings button.
+- Refined settings header and spacing.
+- Settings sections now animate size changes smoothly and use more consistent card radius/padding.
+- Redesigned About card with Gatha Media brand treatment and improved visual hierarchy.
+- Reset settings action has consistent rounded shape and touch target.
+
+Important:
+- Existing capture, GPS, stamp, permissions, and save logic were intentionally left unchanged.
+- This update retains the existing dark visual theme. A full light/dark toggle is not included because the current screen uses many hard-coded white-on-dark controls; a proper theme toggle needs a coordinated palette pass across the camera preview overlays and settings to avoid unreadable controls.
+- This source ZIP has not been compiled in Android Studio in this environment. Open and run Build > Make Project before generating a release APK.

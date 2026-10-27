@@ -1,0 +1,14 @@
+GPS Camera by Gatha Media — Modern Camera UI update
+
+Changes in this update:
+1. Removed the camera-preview zoom slider. Zoom is now controlled by a two-finger pinch gesture, using CameraX setZoomRatio and the device's supported zoom range.
+2. Preserved single-tap focus and metering. A multi-touch/pinch gesture is not treated as a focus tap after the pinch ends.
+3. Increased horizontal spacing around the camera preview and bottom controls to reduce edge congestion.
+4. Added status-bar and navigation-bar inset padding to the top and bottom bars for safer spacing on modern Android devices.
+5. Preserved existing capture/stamped-photo behavior, flash, camera switching, GPS overlay and settings controls.
+
+Build verification: Source changes and ZIP integrity were checked in this environment, but Android Gradle compilation/device testing has not been run. Open in Android Studio, sync, then Build > Make Project before generating a signed APK.
+Gradle wrapper remains set to Gradle 8.9. Gradle daemon JVM criteria file was removed so it does not force Java 25; select JDK 17 in Android Studio Gradle settings.
+
+
+Follow-up reliability update: corrected quick ratio to portrait 9:16; corrected viewfinder masking for portrait ratios; removed a duplicate click argument in the camera button; flash changes now apply to the active capture use case without rebinding the camera.

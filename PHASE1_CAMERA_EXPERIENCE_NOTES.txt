@@ -1,0 +1,14 @@
+GPS Camera by Gatha Media — Phase 1 camera experience changes
+
+Changes in this update:
+- Camera preview binding is performed when the camera/lifecycle changes rather than on every Compose recomposition. This avoids repeatedly unbinding/rebinding the camera during ordinary UI state changes.
+- Tap-to-focus remains enabled and uses CameraX focus/metering at the tapped preview coordinate.
+- Flash cycles through Auto, On, and Off. Device/camera support may limit flash behavior, especially on front cameras.
+- A zoom slider is shown when the active camera reports optical/digital zoom range above 1x. It applies zoom through CameraX CameraControl and respects the reported maximum zoom.
+- Location badge now says “Waiting for GPS fix” until a location is actually available; it does not imply a fix exists before capture.
+- Capture mode remains CameraX minimize-latency and JPEG quality 100.
+- Previous stamped-only saving behavior is retained; source capture is temporary cache data and is deleted after processing.
+
+Validation:
+- ZIP integrity can be checked, but this environment does not have Android SDK/Gradle installed, so this source has NOT been compiled or device-tested here.
+- After opening in Android Studio, sync and generate a debug/release build. Test camera switch, flash Auto/On/Off, zoom, tap focus, portrait/landscape orientation, GPS unavailable behavior, and stamped-only saving on the actual phone.

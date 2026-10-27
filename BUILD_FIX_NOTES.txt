@@ -1,0 +1,11 @@
+GPS Camera build configuration correction
+
+Changes made:
+- Changed Gradle wrapper from 9.6.0 to 8.9 to match Android Gradle Plugin 8.7.3.
+- Removed Gradle daemon JVM criteria that forced Java 25; configure Android Studio Gradle JDK to JDK 17.
+- Aligned unused version-catalog AGP/Kotlin metadata with the actual root plugin versions.
+- Removed machine-specific local.properties and generated caches/build outputs.
+
+In Android Studio, set Settings > Build, Execution, Deployment > Build Tools > Gradle > Gradle JDK to a JDK 17 installation (Android Studio Embedded JDK 17 if available), Sync, then try Build > Generate Signed Bundle / APK.
+
+The project has not been compiled in this environment.

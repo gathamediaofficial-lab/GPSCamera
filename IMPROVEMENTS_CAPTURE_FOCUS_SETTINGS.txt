@@ -1,0 +1,14 @@
+GPS Camera - Capture, Focus & Settings update
+
+Changes in this update:
+- Starts location acquisition in parallel with the camera capture instead of waiting for GPS before triggering the shutter.
+- Prefers a recent cached location and limits waiting for a fresh GPS fix.
+- Limits reverse-geocoding wait so a slow address provider cannot indefinitely delay photo processing.
+- Keeps only the stamped image in Pictures/GPS Camera/Stamped; the raw capture is temporary and deleted.
+- Improves tap-to-focus metering with a more forgiving target region and autofocus + exposure + white-balance metering.
+- Refines Settings sections into clearer modern cards with stronger headings, accent markers, and separators.
+
+Important:
+- This environment could not run the Android Gradle build because the Gradle distribution was not cached and network access to services.gradle.org was unavailable.
+- Open the project in Android Studio using Gradle JDK 17 and sync/build there before installing or releasing it.
+- Test camera capture, GPS/address stamps, tap-to-focus, front/back camera, flash, aspect ratios, and Settings on a real phone.
