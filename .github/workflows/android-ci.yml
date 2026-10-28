@@ -30,10 +30,14 @@ jobs:
 
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
+        with:
+          # Prevent the action from trying to install outdated packages automatically
+          packages: ''
 
-      - name: Install Required SDK Components
+      - name: Install Required SDK Platforms and Tools
         run: |
-          sdkmanager --install "platforms;android-34" "build-tools;34.0.0"
+          yes | sdkmanager --licenses || true
+          sdkmanager "platforms;android-34" "build-tools;34.0.0" "platform-tools"
 
       - name: Set up Gradle Cache
         uses: gradle/actions/setup-gradle@v3
