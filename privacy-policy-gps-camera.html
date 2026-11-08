@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Privacy Policy for GPS Camera by Gatha Media.">
-  <title>Privacy Policy — GPS Camera by Gatha Media</title>
+  <meta name="description" content="Privacy Policy for GPS Camera Pro (Research Edition) by Gatha Media.">
+  <title>Privacy Policy — GPS Camera Pro by Gatha Media</title>
   <style>
     :root { color-scheme: light; }
     body { margin: 0; background: #f5f7fb; color: #172033; font: 16px/1.7 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
@@ -12,7 +12,7 @@
     h1 { line-height: 1.2; margin-bottom: 8px; font-size: clamp(2rem, 5vw, 2.7rem); }
     h2 { margin-top: 30px; font-size: 1.25rem; }
     .sub { color: #5c667a; margin-top: 0; }
-    .notice { padding: 14px 16px; background: #f0f5ff; border-left: 4px solid #4169e1; border-radius: 8px; }
+    .notice { padding: 14px 16px; background: #f0f5ff; border-left: 4px solid #4169e1; border-radius: 8px; margin-bottom: 24px; }
     a { color: #2457c5; }
     footer { margin-top: 36px; padding-top: 18px; border-top: 1px solid #e4e8f0; color: #5c667a; font-size: .92rem; }
     @media (max-width: 600px) { main { margin: 0; padding: 24px 18px; border-radius: 0; border: 0; } }
@@ -21,47 +21,51 @@
 <body>
 <main>
   <h1>Privacy Policy</h1>
-  <p class="sub"><strong>GPS Camera by Gatha Media</strong><br>Effective date: 29 October 2026</p>
+  <p class="sub"><strong>GPS Camera Pro (Research Edition) by Gatha Media</strong><br>Effective date: 9 November 2026</p>
 
-  <p>This Privacy Policy explains how GPS Camera (“the App”), published under the Gatha Media brand, accesses and uses camera and location information. The App is designed to create photographs with a location stamp.</p>
+  <div class="notice">
+    <strong>Zero Data Collection Policy:</strong> GPS Camera Pro is engineered for institutional field research. We do not collect, transmit, upload, or monetize your data. All captures, audio notes, and telemetry logs are stored 100% locally on your device.
+  </div>
+
+  <p>This Privacy Policy explains how GPS Camera Pro (“the App”), published under the Gatha Media brand, accesses and uses your device's camera, microphone, location, and hardware sensors. The App is a spatial documentation instrument designed to create location-stamped photographs, qualitative audio notes, and quantitative mapping logs.</p>
 
   <h2>1. Information the App accesses</h2>
   <ul>
-    <li><strong>Camera:</strong> The App accesses the camera when you use it to take a photograph.</li>
-    <li><strong>Device location:</strong> If you grant location permission, the App obtains location information such as latitude and longitude to create the GPS stamp. The accuracy available depends on your device, settings, environment and the permission you grant.</li>
-    <li><strong>Address information:</strong> The App uses Android’s Geocoder interface to try to convert coordinates into a readable address. Address availability and accuracy depend on the Android device and its geocoding provider.</li>
-    <li><strong>Photographs:</strong> The App creates and saves the stamped photograph on your device. The App is not designed to upload your photographs to Gatha Media servers.</li>
+    <li><strong>Camera:</strong> The App accesses the camera to capture high-resolution photographs and provide viewfinder capabilities (like the 3x3 grid and dual-axis leveler).</li>
+    <li><strong>Microphone:</strong> If you utilize the "Audio Field Notes" feature, the App accesses your microphone to record synchronized spoken observations.</li>
+    <li><strong>Device Location & Sensors:</strong> If granted location permission, the App pulls coordinates (latitude/longitude/altitude) directly from GPS satellites (bypassing the device clock for anti-spoofing). It also accesses hardware sensors (accelerometer and magnetometer) to record pitch, roll, and compass azimuth bearing.</li>
+    <li><strong>Address information:</strong> The App uses Android’s Geocoder interface to attempt to convert your coordinates into a readable address (reverse-geocoding).</li>
   </ul>
 
   <h2>2. How information is used</h2>
-  <p>Camera and location access are used to capture a photograph and add the location details you choose to include in its stamp. The App does not require an account to use these core features.</p>
+  <p>Camera, microphone, and location/sensor access are used strictly to compile your field documentation. The App processes this data to stamp visual cards onto your photographs, inject deep EXIF metadata (like custom project notes and compass bearings) into the image files, and generate automated CSV and KML mapping logs. The App requires no account, no login, and works entirely offline (excluding the Android Geocoder).</p>
 
   <h2>3. Storage and sharing</h2>
-  <p>Based on the App’s intended operation, stamped photographs are saved locally on your device and the App does not intentionally send photographs or location records to Gatha Media servers. The App does not include advertising or analytics SDKs, according to the current developer-provided project information.</p>
-  <p><strong>Address lookup and system services:</strong> Android’s Geocoder may rely on a device manufacturer’s or system provider’s service, which can process coordinates to return an address and may require internet access. That processing is governed by the relevant Android/device provider’s practices, not by Gatha Media. The exact provider can vary by device. If you do not want to use address lookup, you can deny or revoke location permission; some GPS-stamp features may then be unavailable or incomplete.</p>
+  <p><strong>100% Local Storage:</strong> All original photographs, stamped photographs, audio memos (.m4a), and telemetry logs (CSV/KML files) are generated and saved strictly to your local device storage (e.g., <code>Pictures/GPS Camera/</code> and <code>Downloads/GPS Camera Logs/</code>). The App is intentionally built without internet upload capabilities, advertising SDKs, or cloud analytics.</p>
+  <p><strong>Address lookup and system services:</strong> Android’s Geocoder relies on a device manufacturer’s or system provider’s service (like Google Play Services) to process coordinates into a readable address, which may require brief internet access. That processing is governed by your device provider’s practices, not by Gatha Media. If you do not want to use address lookup, you can disable the feature in the App's settings or run the device offline; your coordinates and metadata will still save accurately.</p>
 
   <h2>4. Permissions and your choices</h2>
-  <p>You can grant or deny camera and location permissions through Android’s permission prompts and Settings. You can revoke permissions at any time. Denying a permission may prevent the related feature from working. You control the photographs stored in your device’s gallery and file storage.</p>
+  <p>You have absolute control over your permissions. You can grant or deny Camera, Microphone, and Location permissions through Android’s system settings at any time. Denying a specific permission will simply disable the corresponding feature (e.g., denying the microphone will disable Audio Field Notes, but the camera will still function). You retain complete ownership and control over all files generated by the App in your device's file manager.</p>
 
   <h2>5. Third-party services</h2>
-  <p>The App does not intentionally send data to Gatha Media-operated servers. Android operating-system services and the geocoding provider used by your device may process information as described above. Please review the applicable privacy information provided by your device or system-service provider for details of their handling of data.</p>
+  <p>The App contains no third-party tracking, analytics, or advertising frameworks. Android operating-system services (such as the Geocoder or FusedLocationProvider) may process information locally to provide the App with location data. Please review the applicable privacy information provided by your device manufacturer or operating system for details on their handling of hardware requests.</p>
 
   <h2>6. Children’s privacy</h2>
-  <p>The App is not designed to collect personal information from children. The App does not ask users to create an account or submit personal information to Gatha Media.</p>
+  <p>The App is a professional research tool and is not directed at children. The App does not ask users to create an account or submit personal information to Gatha Media.</p>
 
   <h2>7. Security and retention</h2>
-  <p>Stamped photographs are stored on your device. Their security and retention depend in part on your device’s security settings, storage configuration, backups and any other apps with which you choose to share them. You can delete photographs using your device’s gallery or file manager.</p>
+  <p>Because all data remains on your device, security and retention are managed by you. The security of your field research depends on your device’s lock screen, encryption settings, backups, and any file-sharing apps you actively choose to use (such as sharing an image to email or importing a KML file to QGIS). You can delete your photographs, audio notes, and logs using the App's native gallery or your device’s file manager at any time.</p>
 
   <h2>8. Changes to this policy</h2>
-  <p>This policy may be updated when the App’s features or data practices change. The effective date at the top of this page will be updated when a revised policy is published.</p>
+  <p>This policy may be updated if the App’s features evolve (such as adding new local data export formats). The effective date at the top of this page will be updated when a revised policy is published.</p>
 
   <h2>9. Contact</h2>
-  <p>For questions or privacy-related requests concerning GPS Camera, contact:<br>
+  <p>For questions, institutional inquiries, or privacy-related requests concerning GPS Camera Pro, contact:<br>
   <strong>Gatha Media</strong><br>
   Email: <a href="mailto:gathamediaofficial@gmail.com">gathamediaofficial@gmail.com</a></p>
 
   <footer>
-    This policy describes the intended behaviour based on the information currently available for the App. The developer should review it against the final release APK and update it if the app’s permissions, libraries, network behaviour or data practices change.
+    &copy; 2026 Gatha Media. GPS Camera Pro (Version 3.0.0). Built for precision, designed for privacy.
   </footer>
 </main>
 </body>
