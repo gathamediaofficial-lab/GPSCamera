@@ -1,136 +1,83 @@
-# GPS Camera by Gatha
+# 📷 GPS Camera Pro (Research Edition)
+
+**Version 3.0.0**
 
 Android Studio project for **GPS Camera** (`com.gatha.gpscamera`).
 
-## Requirements
-- Android Studio with Android SDK 35 installed
-- JDK 17
-- Android 10 (API 29) or newer
+GPS Camera Pro is a professional-grade spatial documentation and telemetry instrument engineered specifically for institutional fieldwork, ethnographic documentation, demographic analysis, and cultural heritage conservation.
 
-## Open and run
-1. Extract this folder.
-2. Open the `GPSCamera` folder in Android Studio.
-3. Allow Gradle Sync to finish.
-4. Connect an Android phone (Android 10+) and press Run.
+Standard commercial camera applications are insufficient for rigorous academic data collection, requiring researchers to spend countless hours manually transcribing coordinates and field notes. GPS Camera Pro bridges the gap between visual capture and quantitative/qualitative data analysis by completely eliminating manual transcription bottlenecks. It captures high-accuracy location data, hardware telemetry, and qualitative audio memos, structuring them instantly for advanced analytical tools like QGIS, jamovi, SPSS, and R.
 
-## Implemented
-- CameraX live preview, front/rear camera switching, flash control
-- Capture original and GPS-stamped JPEGs separately in `Pictures/GPS Camera/Original` and `Pictures/GPS Camera/Stamped`
-- GPS coordinates, reverse-geocoded address, capture date/time, accuracy and altitude when available
-- EXIF date/time and GPS metadata when the device supplies valid location data
-- Premium dark minimal camera interface
-- Capture can continue if location permission is denied; unavailable GPS fields are labelled as unavailable rather than fabricated
-- Flash and camera-switch controls are disabled during capture
-- Last-photo shortcut opens the stamped output
+---
 
-## Phase 2 notes
-The current phase focuses on capture experience, GPS-state clarity, safer capture behavior, and previewing the stamped result. Device-specific camera behavior and build success should still be verified in Android Studio and on the target phone after each update.
+## 🏛️ Institutional Use Cases
 
+* **Ethnographic & Demographic Surveys:** Automatically log household coordinates, elevation, and custom ward identifiers (e.g., "Project EHSAS - Ward 97") directly into a CSV file while capturing demographic subject photos.
+* **Manuscript & Artifact Archiving:** Utilize the dual-axis accelerometer leveler and 3x3 grid overlay to capture distortion-free, perfectly aligned images of fragile documents or museum artifacts.
+* **Site & Architectural Documentation:** Record the exact magnetic azimuth (compass bearing) of structural ruins, heritage sites, or sacred geography to document precise spatial orientation.
+* **Rapid Field Observations:** Hold the shutter to record synchronized audio memos, allowing researchers to capture oral context or rapid visual observations without looking down at a screen to type.
 
-## Phase 3 — Gallery & Photo Management
+---
 
-- In-app gallery lists images stored under `Pictures/GPS Camera/`.
-- Filter between All, Stamped, and Original photos.
-- Tap a thumbnail to inspect filename, capture date, file size, and folder.
-- Share an image using Android's share sheet.
-- Delete images after explicit confirmation.
-- Gallery queries only the app's GPS Camera folder; it does not scan unrelated photo folders.
+## 🔒 Zero Data Collection Privacy Policy
 
-Build and test on a real Android device. The project ZIP is archive-validated, but an Android Gradle build has not been run in this environment.
+**This application respects researcher and participant privacy absolutely.**
 
+* **100% Local Storage:** We do not collect, transmit, upload, or monetize your data.
+* **No Cloud Telemetry:** All photographs, audio files, and spatial mapping logs are processed and stored exclusively on your local device hardware.
+* **Zero Accounts:** No user logins, no third-party tracking SDKs, and no analytics.
 
-## Phase 4 — Stamp Customization
+---
 
-- Toggle coordinates, address, date/time, accuracy, and altitude independently.
-- Select Classic, Compact, or Elegant stamp styles.
-- Choose Top or Bottom placement.
-- Adjust stamp text size and panel opacity.
-- Settings dialog provides a reset-to-defaults action.
-- Camera overlay preview reflects selected fields, style label, position, size, and opacity; settings apply to the next captured photo.
-- Defaults keep all GPS stamp fields enabled.
+## 🚀 Core Research Features
 
-Archive validation passed. Android Gradle compilation and physical-device testing have not been performed in this environment; please build and test before relying on the generated APK.
+### 📊 Automated Spatial Mapping & Telemetry Logging
 
+* **Continuous CSV Field Logging:** Silently appends every capture to a master `field_log.csv` file in your device's Downloads folder. Logs the filename, precise GPS coordinates, altitude, accuracy, compass bearing, and custom notes. The file is formatted for immediate import into jamovi, SPSS, or R for statistical evaluation.
+* **Automated KML / GeoJSON Generation:** Simultaneously builds a `field_log.kml` mapping file. Researchers can drag and drop this single file into QGIS or Google Earth to instantly visualize an entire site survey, complete with embedded metadata pins.
+* **Deep EXIF Metadata Injection:** Custom Project or Site Notes are permanently burned into the JPEG's `UserComment` and `ImageDescription` EXIF tags. This makes your visual data natively text-searchable inside any desktop operating system's file explorer.
 
-## Phase 5 — Privacy, Reliability & Release Readiness
+### 🛡️ Precision & Data Integrity
 
-- Stamp customization now persists locally across app restarts (SharedPreferences); no account or cloud sync is used.
-- Camera permission-denied state provides an in-app recovery action instead of leaving the preview as a dead end.
-- Stamp preference values are validated/clamped when loaded and saved to avoid invalid UI values.
-- Bitmap resources used to render stamped photos are recycled in a `finally` block, including failure paths, reducing memory pressure on repeated captures.
-- Version metadata updated to 1.4.0 / versionCode 5.
-- Permission and local-storage behavior is described in the settings UI. The app does not request broad all-files access.
+* **Anti-Spoofing Satellite Timestamps:** Bypasses the device's internal clock entirely, preventing manual time manipulation. Timestamps are pulled directly from secure atomic GPS satellites (`location.time`) to ensure unimpeachable data compliance for official government reporting.
+* **Dual-Axis Leveler:** A highly responsive on-screen accelerometer crosshair ensures perfect pitch and roll alignment, eliminating perspective distortion during archival photography.
+* **Compass Azimuth Bearing:** Real-time magnetic bearing (e.g., 245° WSW) is displayed on the visual stamp and injected into the `TAG_GPS_IMG_DIRECTION` EXIF header.
 
-### Release validation checklist
+### 🎙️ Qualitative Documentation & Routing
 
-Before distributing, verify on a physical Android 10+ device: fresh install and upgrade; camera permission denied then granted; location permission denied; approximate-only location; location unavailable; repeated captures; low-storage failure; app process restart with stamp settings; EXIF GPS/date tags for valid-location captures; gallery share/delete; and Android 13+ photo/gallery behavior. Confirm location metadata is absent when no valid location is available.
+* **Synchronized Audio Field Notes:** Hold the shutter button down to record spoken qualitative observations. The app saves an `.m4a` audio file paired perfectly to the photograph with the exact same base filename and timestamp.
+* **Project-Based Folder Routing:** Type a custom identifier (e.g., "Banswara_Fieldwork") and the app bypasses the default gallery, routing all original photos, stamped photos, and audio files to a dedicated, automatically generated project folder.
+* **Native Swipeable Gallery:** Fluid, full-screen, swipeable gallery integration allows for instant field review, deletion, and sharing capabilities directly within the app.
 
-**Validation status:** ZIP archive integrity can be checked here, but Android Gradle compilation and device tests have not been run in this environment. Do not treat this ZIP as a verified release APK.
+---
 
+## ⚙️ Stamp Customization & UI
 
-## Phase 6 — Advanced Photo Experience (1.5.0)
+* **Extensive Formatting:** Toggle coordinates, address, date/time, accuracy, and altitude independently based on the specific requirements of your publication or archive.
+* **Layout & Positioning:** Select Classic, Compact, or Elegant stamp styles and place them in any of the six corners/edges of the frame to avoid obscuring vital visual data.
+* **Persistent Settings:** Stamp customization and Pro Field Research toggles persist locally across app restarts via `SharedPreferences`.
 
-- Opens gallery selections in a full-screen photo viewer.
-- Provides previous/next navigation through the current gallery list.
-- Adds a show/hide photo details panel with filename, capture time, size, folder, and a GPS metadata note.
-- Uses the detected content MIME type when sharing, with a JPEG fallback.
-- Keeps delete behind a confirmation dialog and refreshes the gallery after deletion.
+---
 
-### Verification status
-The ZIP archive can be integrity-checked, but this project has not been independently compiled in Android Studio or tested on a physical device as part of this package generation. Please run Gradle Sync and Build in Android Studio before installing.
+## 💻 Technical Requirements
 
-## Version 1.6.0 — Native gallery integration
+* **IDE:** Android Studio with Android SDK 35 installed
+* **Environment:** JDK 17
+* **Minimum OS:** Android 10 (API 29) or newer
+* **Hardware:** A physical Android device is strongly recommended for testing hardware sensors (accelerometer, magnetometer) and CameraX integration.
 
-- Removed the app-owned gallery grid and in-app photo viewer.
-- Original images are saved to `Pictures/GPS Camera/Original/` and stamped images to `Pictures/GPS Camera/Stamped/` through Android `MediaStore`, making them discoverable to compatible phone gallery apps.
-- The photo-library button opens the latest stamped photo in Android's standard image-view intent / chooser. It also finds the latest stamped photo after restarting the app.
-- The capture flow remains inside GPS Camera; after a capture, the latest stamped image can be opened with one tap.
-- Sharing/viewing is delegated to installed Android apps; available choices vary by device.
-- No new storage permission is required for the app's own MediaStore images.
+## 🛠️ Build and Deployment
 
-### Manual verification checklist
-1. Build and install on an Android 10+ device.
-2. Capture a photo with location permission enabled and confirm both original and stamped images appear in the phone's gallery.
-3. Deny location permission and capture again; confirm the photo still saves and unavailable GPS fields are not fabricated.
-4. Tap the photo-library button and confirm Android offers a compatible native viewer.
-5. Close and relaunch GPS Camera, then tap the photo-library button to confirm it finds the latest stamped image.
-6. Confirm originals and stamped photos remain in their separate folders.
+1. Extract the project folder or clone the repository to your local machine.
+2. Open the `GPSCamera` directory in Android Studio.
+3. Allow Gradle Sync to finish downloading dependencies.
+4. Connect a physical Android device and deploy.
+5. *Note: You must grant Camera, Precise Location, and Microphone permissions on the first launch to enable the advanced research and audio features.*
 
+---
 
-## Native gallery button behavior
-The gallery button first launches the phone's gallery application using Android's `CATEGORY_APP_GALLERY` intent. GPS Camera does not implement its own gallery or photo viewer. On devices that do not expose a gallery app through this intent, the app falls back to opening the latest stamped image with a compatible native image viewer.
+## 📦 GitHub Hosting and Updates
 
+See [`GITHUB_HOSTING_AND_UPDATES.md`](https://www.google.com/search?q=GITHUB_HOSTING_AND_UPDATES.md) for repository setup, GitHub Actions CI/release publishing, signing-key secrets, and version-tag instructions. The in-app Settings menu includes a GitHub Release update checker. Ensure you replace the repository owner/name constants in `GitHubUpdateChecker.kt` before publishing your fork.
 
-## Version 1.6.2 — Full-page Settings
-
-- Settings opens as a dedicated full-screen page instead of a popup dialog.
-- Added organized Photo Stamp, Stamp Appearance, Location, and About sections.
-- Stamp preferences continue to save automatically on-device.
-- Added About information describing the app, local photo storage, and privacy approach.
-- System Back and the page back button return to the camera.
-
-
-## Version 1.7.0 — Stamp placement and camera improvements
-
-- Added six stamp positions: top-left, top-middle, top-right, bottom-left, bottom-middle, and bottom-right.
-- Changed the printed GPS stamp from a full-width strip to a compact rounded card.
-- Settings persist locally and apply to subsequent captured photos.
-- On each fresh app launch, the app requests precise location if it has not already been granted; existing permission is not requested again. If Android suppresses repeat prompts after repeated denials, the user must enable permission in Android App Settings.
-- Location capture requests high accuracy when precise location permission is available. Location fields are never fabricated when a fix is unavailable.
-- CameraX remains configured for minimize-latency capture and uses JPEG quality 100; the actual maximum resolution is device/camera dependent.
-
-Build and test this project in Android Studio on a physical device before release.
-
-
-## Update 1.8.0 — Compact stamp, branding and permission settings
-
-- Stamp cards now size to their content, with a maximum width cap to prevent full-width strips.
-- Added a small location-pin mark and corrected the app/stamp branding to **Gatha Media**.
-- Settings includes direct shortcuts to Android app-permission settings and device location settings.
-- The app requests camera and location permissions when needed; Android controls the final permission prompt and may direct users to Settings after repeated denials.
-- APK installation permission is managed by Android for the app used to install the APK; GPS Camera does not request unrelated install permissions.
-
-Build and test in Android Studio before distributing the APK.
-
-## GitHub hosting and updates
-See [`GITHUB_HOSTING_AND_UPDATES.md`](GITHUB_HOSTING_AND_UPDATES.md) for repository setup, GitHub Actions CI/release publishing, signing-key secrets, and version-tag instructions. Settings includes a GitHub Release update check. Replace the repository owner/name constants in `GitHubUpdateChecker.kt` before publishing.
+**Developed by Gatha Media**
